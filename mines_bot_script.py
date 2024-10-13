@@ -284,9 +284,10 @@ async def callback_inline(call):
                     chat_id=call.message.chat.id,
                     message_id=call.message.id
                 )
-                await bot.send_message(
+                await bot.send_photo(
+                    photo=open(f"resources/{language}.jpg", "rb"),
                     chat_id=call.message.chat.id,
-                    text=f"{LOCALE[language].register_text_1[0]}"
+                    caption=f"{LOCALE[language].register_text_1[0]}"
                          f"<a href='{LOCALE[language].link}' style='text-decoration:none'>{LOCALE[language].link_text}</a>"
                          f"{LOCALE[language].register_text_2[0]}",
                     reply_markup=keyboard,

@@ -63,7 +63,7 @@ class Localization:
 
 LOCALE = {
     'ind_en': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wdgx.com/casino/list?open=register&p=ytio",
         link_text="LINK 1WIN",
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
@@ -97,7 +97,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'ind_hi': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wdgx.com/casino/list?open=register&p=ytio",
         link_text="LINK 1WIN",
         greeting_welcome_start="Swāgat hai, ",
         greeting_welcome_end="paisā kamāne ke liye taiyār hain? 💰\n"
@@ -131,7 +131,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'uz': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wayto.life/casino/list?open=register&p=6mqq",
         link_text="LINK 1WIN",
         greeting_welcome_start="Xush kelibsiz, ",
         greeting_welcome_end="pul ishlashga tayyormisiz? 💰\n"
@@ -165,7 +165,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'ag': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wqumw.life/casino/list?open=register&p=suc8",
         link_text="LINK 1WIN",
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
@@ -199,7 +199,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'ch': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wbsjy.life/casino/list?open=register&p=sdsj",
         link_text="LINK 1WIN",
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
@@ -233,7 +233,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'bn': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wltu.com/casino/list?open=register&p=vd4a",
         link_text="LINK 1WIN",
         greeting_welcome_start="Swaagata, ",
         greeting_welcome_end="tumi ki taka kamate prastuta? 💰\n"
@@ -267,7 +267,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'gh': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wdld.com/casino/list?open=register&p=j8vq",
         link_text="LINK 1WIN",
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
@@ -301,7 +301,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'tr': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wbpqg.top/casino/list?open=register&p=ycwy",
         link_text="LINK 1WIN",
         greeting_welcome_start="Hoş geldiniz, ",
         greeting_welcome_end="para kazanmaya hazır mısınız? 💰\n"
@@ -335,7 +335,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'br': Localization(
-        link="https://www.youtube.com/",
+        link="https://1wfwna.life/casino/list?open=register&p=qfcn",
         link_text="LINK 1WIN",
         greeting_welcome_start="Bem-vindo, ",
         greeting_welcome_end="pronto para ganhar dinheiro? 💰\n"
@@ -403,7 +403,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'pk': Localization(
-        link="https://www.youtube.com/",
+        link="https://1whfbb.life/casino/list?open=register&p=hmrg",
         link_text="LINK 1WIN",
         greeting_welcome_start="Khushāmdīd, ",
         greeting_welcome_end="kya aap paisay kamānay ke liye tayyār hain? 💰\n"
@@ -437,7 +437,7 @@ LOCALE = {
         webapp="WEB App:",
     ),
     'ru': Localization(
-        link="https://www.youtube.com/",
+        link="https://1warlo.top/casino/list?open=register&p=n6pk",
         link_text="LINK 1WIN",
         greeting_welcome_start="Добро пожаловать, ",
         greeting_welcome_end="готовы зарабатывать деньги? 💰\n"
