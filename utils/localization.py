@@ -66,19 +66,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Welcome, ",
-        greeting_welcome_end="ready to earn money?\n "
+        greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
         subscribe="Subscribe",
-        already_subscribed="Already subscribed",
+        already_subscribed="Already subscribed ✅",
         error_subscription="Error! You have not subscribed to the channel.",
         subscriber="Great, you have subscribed to the channel.",
-        how_does_the_bot_work="How does the bot work?",
-        gift="For the bot to work correctly, the minimum bet is INR 500 ($6)",
-        start_earning="Start earning money",
+        how_does_the_bot_work="How does the bot work? 🤖",
+        gift="For the bot to work correctly, the minimum bet is ₹500-1000₹",
+        start_earning="Start earning money 💰",
         register_text_1="The rules are simple:\n\n "
                       f"1. Register a 1WIN account using my link and promo code {PROMO_CODE} (press on the link below)\n",
         register_text_2="(The bot only works with a promotional code)\n\n"
-                        "2. Make a deposit to 1WIN of at least 500-1000 INR\n"
+                        "2. Make a deposit to 1WIN of at least ₹500-1000₹\n"
                         "(The bot only works for real money)\n\n"
                         "3. After successfully registering and making a deposit, send screenshot to\n"
                         f"{SUPPORT_USERNAME}",
@@ -100,19 +100,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Swāgat hai, ",
-        greeting_welcome_end="paisā kamāne ke liye taiyār hain?\n"
+        greeting_welcome_end="paisā kamāne ke liye taiyār hain? 💰\n"
                              "Is bot ko istemāl karne ke liye, channel ko subscribe karein:",
         subscribe="Subscribe karein",
         error_subscription="Error! Aapne channel ko subscribe nahi kiya hai.",
-        already_subscribed="pahle se sadasyata li gayi",
+        already_subscribed="pahle se sadasyata li gayi ✅",
         subscriber="Shābāsh! Aapne channel ko subscribe kar liya hai.",
-        how_does_the_bot_work="Bot kaise kār kartā hai?",
-        gift="Bot ko thik se kām karne ke liye minimum bet $10-15 hai",
-        start_earning="Paise kamāna shurū karein",
+        how_does_the_bot_work="Bot kaise kār kartā hai? 🤖",
+        gift="Bot ko thik se kām karne ke liye minimum bet ₹500-1000₹ hai",
+        start_earning="Paise kamāna shurū karein 💰",
         register_text_1="Niym saral hain:\n\n"
                         f"1. Mere link aur promo code {PROMO_CODE} ka upyog karte hue 1WIN account banāen (link niche dabāyain)\n",
         register_text_2="(Bot sirf promotional code ke sāth kām kartā hai)\n\n"
-                        "2. 1WIN par $10-15 kī minimum deposit karein\n"
+                        "2. 1WIN par ₹500-1000₹ kī minimum deposit karein\n"
                         "(Bot sirf real money ke liye kām kartā hai)\n\n"
                         "3. Register aur deposit karne ke bād, screenshot bhejein\n"
                         f"{SUPPORT_USERNAME} ko",
@@ -134,15 +134,15 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Xush kelibsiz, ",
-        greeting_welcome_end="pul ishlashga tayyormisiz?\n"
+        greeting_welcome_end="pul ishlashga tayyormisiz? 💰\n"
                              "Bu botdan foydalanish uchun, kanalda obuna bo'ling:",
         subscribe="Obuna bo'lish",
-        already_subscribed="Allaqachon obuna bo'lingan",
+        already_subscribed="Allaqachon obuna bo'lingan ✅",
         error_subscription="Xatolik! Siz kanalga obuna bo'lmadingiz.",
         subscriber="Ajoyib! Siz kanalga obuna bo'ldingiz.",
-        how_does_the_bot_work="Bot qanday ishlaydi?",
+        how_does_the_bot_work="Bot qanday ishlaydi? 🤖",
         gift="Bot to'g'ri ishlashi uchun minimal tikish $10-15 bo'lishi kerak",
-        start_earning="Pul ishlashni boshlang",
+        start_earning="Pul ishlashni boshlang 💰",
         register_text_1="Qoidalar oddiy:\n\n"
                         f"1. Mening havolam va promo kodim {PROMO_CODE} yordamida 1WIN hisobini ro'yxatdan o'tkazing (quyidagi havolani bosing)\n",
         register_text_2="(Bot faqat promo kod bilan ishlaydi)\n\n"
@@ -168,19 +168,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Bienvenido, ",
-        greeting_welcome_end="¿Listo para ganar dinero?\n"
+        greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
         subscribe="Suscribirse",
-        already_subscribed="Ya suscrito",
+        already_subscribed="Ya suscrito ✅",
         error_subscription="¡Error! No te has suscrito al canal.",
         subscriber="¡Genial! Te has suscrito al canal.",
-        how_does_the_bot_work="¿Cómo funciona el bot?",
-        gift="Para que el bot funcione correctamente, la apuesta mínima es de $10-15",
-        start_earning="Comienza a ganar dinero",
+        how_does_the_bot_work="¿Cómo funciona el bot? 🤖",
+        gift="Para que el bot funcione correctamente, la apuesta mínima es de $10-20",
+        start_earning="Comienza a ganar dinero 💰",
         register_text_1="Las reglas son simples:\n\n"
                         f"1. Regístrate en 1WIN usando mi enlace y el código promocional {PROMO_CODE} (presiona el enlace a continuación)\n",
         register_text_2="(El bot solo funciona con un código promocional)\n\n"
-                        "2. Realiza un depósito en 1WIN de al menos $10-15\n"
+                        "2. Realiza un depósito en 1WIN de al menos $10-20\n"
                         "(El bot solo funciona con dinero real)\n\n"
                         "3. Después de registrarte y hacer el depósito, envía una captura de pantalla a\n"
                         f"{SUPPORT_USERNAME}",
@@ -202,19 +202,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Bienvenido, ",
-        greeting_welcome_end="¿Listo para ganar dinero?\n"
+        greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
         subscribe="Suscribirse",
-        already_subscribed="Ya suscrito",
+        already_subscribed="Ya suscrito ✅",
         error_subscription="¡Error! No te has suscrito al canal.",
         subscriber="¡Genial! Te has suscrito al canal.",
-        how_does_the_bot_work="¿Cómo funciona el bot?",
-        gift="Para que el bot funcione correctamente, la apuesta mínima es de $10-15",
-        start_earning="Comienza a ganar dinero",
+        how_does_the_bot_work="¿Cómo funciona el bot? 🤖",
+        gift="Para que el bot funcione correctamente, la apuesta mínima es de $10-20",
+        start_earning="Comienza a ganar dinero 💰",
         register_text_1="Las reglas son simples:\n\n"
                         f"1. Regístrate en 1WIN usando mi enlace y el código promocional {PROMO_CODE} (presiona el enlace a continuación)\n",
         register_text_2="(El bot solo funciona con un código promocional)\n\n"
-                        "2. Realiza un depósito en 1WIN de al menos $10-15\n"
+                        "2. Realiza un depósito en 1WIN de al menos $10-20\n"
                         "(El bot solo funciona con dinero real)\n\n"
                         "3. Después de registrarte y hacer el depósito, envía una captura de pantalla a\n"
                         f"{SUPPORT_USERNAME}",
@@ -236,19 +236,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Swaagata, ",
-        greeting_welcome_end="tumi ki taka kamate prastuta?\n"
+        greeting_welcome_end="tumi ki taka kamate prastuta? 💰\n"
                              "Ei bot byabohar korar janya, channel-e subscribe karo:",
         subscribe="Subscribe karo",
-        already_subscribed="itimodhye sabscraib kora hoyeche",
+        already_subscribed="itimodhye sabscraib kora hoyeche ✅",
         error_subscription="Bhulta! Tumi channel-e subscribe karo ni.",
         subscriber="Darun, tumi channel-e subscribe korecho.",
-        how_does_the_bot_work="Bot kibhabe kaj kore?",
-        gift="Bot-er thikbhabe kaj korar jonno, minimum bet $10-15",
-        start_earning="Taka kamano suru karo",
+        how_does_the_bot_work="Bot kibhabe kaj kore? 🤖",
+        gift="Bot-er thikbhabe kaj korar jonno, minimum bet 700-100 BDT",
+        start_earning="Taka kamano suru karo 💰",
         register_text_1="Niomgulo shohoj:\n\n"
                         f"1. Amar link ebong promo code {PROMO_CODE} bebohar kore 1WIN account khulo (nicher link-e click karo)\n",
         register_text_2="(Bot shudhu promotional code-er shathe kaj kore)\n\n"
-                        "2. 1WIN-e $10-15-er minimum deposit koro\n"
+                        "2. 1WIN-e 700-100 BDT-er minimum deposit koro\n"
                         "(Bot shudhu real money-er jonno kaj kore)\n\n"
                         "3. Register kore ebong deposit korar por, screenshot pathao\n"
                         f"{SUPPORT_USERNAME} ke",
@@ -270,15 +270,15 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Welcome, ",
-        greeting_welcome_end="ready to earn money?\n "
+        greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
         subscribe="Subscribe",
-        already_subscribed="Already subscribed",
+        already_subscribed="Already subscribed ✅",
         error_subscription="Error! You have not subscribed to the channel.",
         subscriber="Great, you have subscribed to the channel.",
-        how_does_the_bot_work="How does the bot work?",
+        how_does_the_bot_work="How does the bot work? 🤖",
         gift="For the bot to work correctly, the minimum bet is $10-15",
-        start_earning="Start earning money",
+        start_earning="Start earning money 💰",
         register_text_1="The rules are simple:\n\n "
                         f"1. Register a 1WIN account using my link and promo code {PROMO_CODE} (press on the link below)\n",
         register_text_2="(The bot only works with a promotional code)\n\n"
@@ -304,19 +304,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Hoş geldiniz, ",
-        greeting_welcome_end="para kazanmaya hazır mısınız?\n"
+        greeting_welcome_end="para kazanmaya hazır mısınız? 💰\n"
                              "Bu botu kullanmak için kanala abone olun:",
         subscribe="Abone Ol",
-        already_subscribed="Zaten abone olundu",
+        already_subscribed="Zaten abone olundu ✅",
         error_subscription="Hata! Kanala abone olmadınız.",
         subscriber="Harika, kanala abone oldunuz.",
-        how_does_the_bot_work="Bot nasıl çalışır?",
-        gift="Botun düzgün çalışması için minimum bahis $10-15'tir",
-        start_earning="Para kazanmaya başlayın",
+        how_does_the_bot_work="Bot nasıl çalışır? 🤖",
+        gift="Botun düzgün çalışması için minimum bahis $10-20'tir",
+        start_earning="Para kazanmaya başlayın 💰",
         register_text_1="Kurallar basit:\n\n"
                         f"1. Linkimi ve promo kodu {PROMO_CODE} kullanarak 1WIN hesabı açın (aşağıdaki linke tıklayın)\n",
         register_text_2="(Bot sadece promo kodla çalışır)\n\n"
-                        "2. 1WIN'e en az $10-15 depozit yapın\n"
+                        "2. 1WIN'e en az $10-20 depozit yapın\n"
                         "(Bot sadece gerçek parayla çalışır)\n\n"
                         "3. Kayıt olduktan ve depozit yaptıktan sonra, ekran görüntüsünü gönderin\n"
                         f"{SUPPORT_USERNAME}",
@@ -338,19 +338,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Bem-vindo, ",
-        greeting_welcome_end="pronto para ganhar dinheiro?\n"
+        greeting_welcome_end="pronto para ganhar dinheiro? 💰\n"
                              "Para usar este bot, inscreva-se no canal:",
         subscribe="Inscreva-se",
-        already_subscribed="Já inscrito",
+        already_subscribed="Já inscrito ✅",
         error_subscription="Erro! Você não se inscreveu no canal.",
         subscriber="Ótimo, você se inscreveu no canal.",
-        how_does_the_bot_work="Como funciona o bot?",
-        gift="Para que o bot funcione corretamente, a aposta mínima é de $10-15",
-        start_earning="Comece a ganhar dinheiro",
+        how_does_the_bot_work="Como funciona o bot? 🤖",
+        gift="Para que o bot funcione corretamente, a aposta mínima é de 30-40 BRL",
+        start_earning="Comece a ganhar dinheiro 💰",
         register_text_1="As regras são simples:\n\n"
                         f"1. Registre-se em 1WIN usando meu link e código promocional {PROMO_CODE} (clique no link abaixo)\n",
         register_text_2="(O bot só funciona com um código promocional)\n\n"
-                        "2. Faça um depósito de pelo menos $10-15 no 1WIN\n"
+                        "2. Faça um depósito de pelo menos 30-40 BRL no 1WIN\n"
                         "(O bot só funciona com dinheiro real)\n\n"
                         "3. Após se registrar e fazer o depósito, envie a captura de tela para\n"
                         f"{SUPPORT_USERNAME}",
@@ -372,19 +372,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Swāgat chha, ",
-        greeting_welcome_end="timi paisā kamauna tayār chau?\n"
+        greeting_welcome_end="timi paisā kamauna tayār chau? 💰\n"
                              "Yo bot prayog garnalai, channel subscribe garna hos:",
         subscribe="Subscribe garna hos",
-        already_subscribed="pahile nai sadasyata liieko",
+        already_subscribed="pahile nai sadasyata liieko ✅",
         error_subscription="Truti! Timi channel subscribe gareko chhaina.",
         subscriber="Shābāsh, timi channel subscribe gareko chhau.",
-        how_does_the_bot_work="Bot kasari kām garcha?",
-        gift="Bot-lāī sahī tariqale kām garna, minimum bet $10-15 ho",
-        start_earning="Paisā kamauna suru garnu hos",
+        how_does_the_bot_work="Bot kasari kām garcha? 🤖",
+        gift="Bot-lāī sahī tariqale kām garna, minimum bet 800-1500 NPR ho",
+        start_earning="Paisā kamauna suru garnu hos 💰",
         register_text_1="Niyamharu saral chhan:\n\n"
                         f"1. Mero link ra promo code {PROMO_CODE} prayog gari 1WIN account kholnus (niche ko link ma click garnu hos)\n",
         register_text_2="(Bot promo code sāthmā mātra kām garcha)\n\n"
-                        "2. 1WIN mā at least $10-15 ko deposit garnu hos\n"
+                        "2. 1WIN mā at least 800-1500 NPR ko deposit garnu hos\n"
                         "(Bot real money sāthmā mātra kām garcha)\n\n"
                         "3. Saphal rūpmā register ra deposit garepachi, screenshot pathāunu hos\n"
                         f"{SUPPORT_USERNAME} mā",
@@ -406,19 +406,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Khushāmdīd, ",
-        greeting_welcome_end="kya aap paisay kamānay ke liye tayyār hain?\n"
+        greeting_welcome_end="kya aap paisay kamānay ke liye tayyār hain? 💰\n"
                              "Is bot kā istemāl karne ke liye, channel ko subscribe karain:",
         subscribe="Subscribe karain",
-        already_subscribed="pehle hi subscribe kiya hua",
+        already_subscribed="pehle hi subscribe kiya hua ✅",
         error_subscription="Ghalti! Aap ne channel ko subscribe nahi kiya.",
         subscriber="Mubarak ho, aap ne channel ko subscribe kar liya.",
-        how_does_the_bot_work="Bot kaise kām kartā hai?",
-        gift="Bot ko durust kaam karne ke liye minimum bet $10-15 hai",
-        start_earning="Paisay kamānay shurū karain",
+        how_does_the_bot_work="Bot kaise kām kartā hai? 🤖",
+        gift="Bot ko durust kaam karne ke liye minimum bet 1700-2500 PKR hai",
+        start_earning="Paisay kamānay shurū karain 💰",
         register_text_1="Qawāid sāda hain:\n\n"
                         f"1. Meri link aur promo code {PROMO_CODE} ke zariye 1WIN account banayein (neeche diye gaye link par click karein)\n",
         register_text_2="(Bot sirf promo code ke sāth kām kartā hai)\n\n"
-                        "2. 1WIN par kam az kam $10-15 ka deposit karein\n"
+                        "2. 1WIN par kam az kam 1700-2500 PKR ka deposit karein\n"
                         "(Bot sirf real money ke liye kām kartā hai)\n\n"
                         "3. Registration aur deposit ke bād, screenshot ko\n"
                         f"{SUPPORT_USERNAME} par bhejein",
@@ -440,19 +440,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Добро пожаловать, ",
-        greeting_welcome_end="готовы зарабатывать деньги?\n"
+        greeting_welcome_end="готовы зарабатывать деньги? 💰\n"
                              "Чтобы использовать этого бота, подпишитесь на канал:",
         subscribe="Подписаться",
-        already_subscribed="Уже подписан",
+        already_subscribed="Уже подписан ✅",
         error_subscription="Ошибка! Вы не подписались на канал.",
         subscriber="Отлично, вы подписались на канал.",
-        how_does_the_bot_work="Как работает бот?",
-        gift="Для корректной работы бота минимальная ставка $10-15",
-        start_earning="Начать зарабатывать деньги",
+        how_does_the_bot_work="Как работает бот? 🤖",
+        gift="Для корректной работы бота минимальная ставка 1000-1500 РУБ",
+        start_earning="Начать зарабатывать деньги 💰",
         register_text_1="Правила просты:\n\n"
                         f"1. Зарегистрируйте аккаунт 1WIN, используя мою ссылку и промокод {PROMO_CODE} (нажмите на ссылку ниже)\n",
         register_text_2="(Бот работает только с промокодом)\n\n"
-                        "2. Сделайте депозит на 1WIN минимум на $10-15\n"
+                        "2. Сделайте депозит на 1WIN минимум на 1000-1500 РУБ\n"
                         "(Бот работает только с реальными деньгами)\n\n"
                         "3. После успешной регистрации и внесения депозита отправьте скриншот\n"
                         f"{SUPPORT_USERNAME}",
@@ -465,7 +465,7 @@ LOCALE = {
         no_permission_text="Ошибка, у вас нет доступа к боту.\n"
                            "Обратитесь в поддержку для решения проблемы.",
         contact_support_button="СВЯЗАТЬСЯ С ПОДДЕРЖКОЙ",
-        link_to_webapp="https://yemines.ru/",
+        link_to_webapp="https://yemines.online/",
         open_ios_text="Открыть Web App для iOS",
         open_android_text="Открыть Android | Windows",
         webapp="ВЕБ-приложение:",
@@ -474,15 +474,15 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Bienvenido, ",
-        greeting_welcome_end="¿Listo para ganar dinero?\n"
+        greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
         subscribe="Suscribirse",
-        already_subscribed="Ya suscrito",
+        already_subscribed="Ya suscrito ✅",
         error_subscription="¡Error! No te has suscrito al canal.",
         subscriber="¡Genial! Te has suscrito al canal.",
-        how_does_the_bot_work="¿Cómo funciona el bot?",
+        how_does_the_bot_work="¿Cómo funciona el bot? 🤖",
         gift="Para que el bot funcione correctamente, la apuesta mínima es de $10-15",
-        start_earning="Comienza a ganar dinero",
+        start_earning="Comienza a ganar dinero 💰",
         register_text_1="Las reglas son simples:\n\n"
                         f"1. Regístrate en 1WIN usando mi enlace y el código promocional {PROMO_CODE} (presiona el enlace a continuación)\n",
         register_text_2="(El bot solo funciona con un código promocional)\n\n"
@@ -508,19 +508,19 @@ LOCALE = {
         link="https://www.youtube.com/",
         link_text="LINK 1WIN",
         greeting_welcome_start="Welcome, ",
-        greeting_welcome_end="ready to earn money?\n "
+        greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
         subscribe="Subscribe",
-        already_subscribed="Already subscribed",
+        already_subscribed="Already subscribed ✅",
         error_subscription="Error! You have not subscribed to the channel.",
         subscriber="Great, you have subscribed to the channel.",
-        how_does_the_bot_work="How does the bot work?",
-        gift="For the bot to work correctly, the minimum bet is $10-15",
-        start_earning="Start earning money",
+        how_does_the_bot_work="How does the bot work? 🤖",
+        gift="For the bot to work correctly, the minimum bet is $10-20",
+        start_earning="Start earning money 💰",
         register_text_1="The rules are simple:\n\n "
                         f"1. Register a 1WIN account using my link and promo code {PROMO_CODE} (press on the link below)\n",
         register_text_2="(The bot only works with a promotional code)\n\n"
-                        "2. Make a deposit to 1WIN of at least $10-15\n"
+                        "2. Make a deposit to 1WIN of at least $10-20\n"
                         "(The bot only works for real money)\n\n"
                         "3. After successfully registering and making a deposit, send screenshot to\n"
                         f"{SUPPORT_USERNAME}",
