@@ -36,6 +36,8 @@ TARGET_CHANNEL_ID = int(os.getenv("TARGET_CHANNEL_ID"))
 SUPPORT_LINK = os.getenv("SUPPORT_LINK")
 ADMIN = os.getenv("ADMIN")
 ADMIN_ID = int(os.getenv("ADMIN_ID"))
+IOS_APP = os.getenv("IOS_APP")
+ANDROID_APP = os.getenv("ANDROID_APP")
 
 @bot.message_handler(commands=['start'])
 async def start(message):
@@ -288,7 +290,7 @@ async def callback_inline(call):
                     photo=open(f"resources/{language}.jpg", "rb"),
                     chat_id=call.message.chat.id,
                     caption=f"{LOCALE[language].register_text_1[0]}"
-                         f"<a href='{LOCALE[language].link}' style='text-decoration:none'>{LOCALE[language].link_text}</a>"
+                         f"<a href='{LOCALE[language].link}' style='text-decoration:none'>{LOCALE[language].link_text[0]}</a>"
                          f"{LOCALE[language].register_text_2[0]}",
                     reply_markup=keyboard,
                     parse_mode="HTML"
@@ -351,16 +353,19 @@ async def callback_inline(call):
                 keyboard = types.InlineKeyboardMarkup(
                     row_width=1
                 )
-                webapp = types.WebAppInfo(
-                    url=LOCALE[language].link_to_webapp[0],
+                ios_webapp = types.WebAppInfo(
+                    url=IOS_APP,
+                )
+                android_webapp = types.WebAppInfo(
+                    url=ANDROID_APP,
                 )
                 ios_button = types.InlineKeyboardButton(
                     text=LOCALE[language].open_ios_text[0],
-                    web_app=webapp
+                    web_app=ios_webapp
                 )
                 android_button = types.InlineKeyboardButton(
                     text=LOCALE[language].open_android_text[0],
-                    web_app=webapp
+                    web_app=android_webapp
                 )
                 keyboard.add(
                     ios_button,

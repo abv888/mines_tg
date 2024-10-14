@@ -29,7 +29,6 @@ class Localization:
             verification_info_message_text: str,
             no_permission_text: str,
             contact_support_button: str,
-            link_to_webapp: str,
             open_ios_text: str,
             open_android_text: str,
             webapp: str
@@ -54,7 +53,6 @@ class Localization:
         self.verification_info_message_text = verification_info_message_text,
         self.no_permission_text = no_permission_text,
         self.contact_support_button = contact_support_button,
-        self.link_to_webapp = link_to_webapp,
         self.open_ios_text = open_ios_text,
         self.open_android_text = open_android_text,
         self.webapp = webapp
@@ -64,7 +62,7 @@ class Localization:
 LOCALE = {
     'ind_en': Localization(
         link="https://1wdgx.com/casino/list?open=register&p=ytio",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
@@ -82,23 +80,22 @@ LOCALE = {
                         "(The bot only works for real money)\n\n"
                         "3. After successfully registering and making a deposit, send screenshot to\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="REGISTER HERE",
-        get_signal_button="GET SIGNAL",
+        register_button="REGISTER HERE 🚀",
+        get_signal_button="GET SIGNAL 🤖",
         send_screenshot_button_text="SEND SCREENSHOT",
-        check_permission_button="CHECK PERMISSION",
+        check_permission_button="CHECK PERMISSION ✅",
         verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot.\n "
                                        "(Only send screenshot AFTER you've made a deposit to 1WIN)",
         no_permission_text="Error, you don't have an access ti the bot.\n "
                            "Contact support to resolve a problem.",
-        contact_support_button="CONTACT SUPPORT",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="CONTACT SUPPORT 🧑‍💻",
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
     ),
     'ind_hi': Localization(
         link="https://1wdgx.com/casino/list?open=register&p=ytio",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Swāgat hai, ",
         greeting_welcome_end="paisā kamāne ke liye taiyār hain? 💰\n"
                              "Is bot ko istemāl karne ke liye, channel ko subscribe karein:",
@@ -116,23 +113,22 @@ LOCALE = {
                         "(Bot sirf real money ke liye kām kartā hai)\n\n"
                         "3. Register aur deposit karne ke bād, screenshot bhejein\n"
                         f"{SUPPORT_USERNAME} ko",
-        register_button="REGISTER YAHAN",
-        get_signal_button="SIGNAL PRAAPT KARO",
+        register_button="REGISTER YAHAN 🚀",
+        get_signal_button="SIGNAL PRAAPT KARO 🤖",
         send_screenshot_button_text="SCREENSHOT BHEJEIN",
-        check_permission_button="PERMISSION CHECK KARO",
+        check_permission_button="PERMISSION CHECK KARO ✅",
         verification_info_message_text=f"1WIN account ka screenshot {SUPPORT_USERNAME} ko bhejein bot access ke liye.\n"
                                        "(Sirf screenshot bhejein jab aapne 1WIN par deposit kar liya ho)",
         no_permission_text="Error, aapko bot tak pahunch nahi hai.\n"
                            "Samasyā ke liye support se sampark karein.",
-        contact_support_button="SUPPORT SE SAMPARK KAREIN",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="SUPPORT SE SAMPARK KAREIN 🧑‍💻",
         open_ios_text="Web App iOS Kholo",
         open_android_text="Android | Windows Kholo",
         webapp="WEB App:",
     ),
     'uz': Localization(
         link="https://1wayto.life/casino/list?open=register&p=6mqq",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Xush kelibsiz, ",
         greeting_welcome_end="pul ishlashga tayyormisiz? 💰\n"
                              "Bu botdan foydalanish uchun, kanalda obuna bo'ling:",
@@ -150,23 +146,22 @@ LOCALE = {
                         "(Bot faqat haqiqiy pul bilan ishlaydi)\n\n"
                         "3. Ro'yxatdan o'tgandan va depozit qilgandan keyin screenshot ni jo'nating\n"
                         f"{SUPPORT_USERNAME} ga",
-        register_button="BU YERDA RO'YXATDAN O'TING",
-        get_signal_button="SIGNALNI O'LING",
+        register_button="BU YERDA RO'YXATDAN O'TING 🚀",
+        get_signal_button="SIGNALNI O'LING 🤖",
         send_screenshot_button_text="SCREENSHOT YUBORING",
-        check_permission_button="RUXSATNI TEKSHIRISH",
+        check_permission_button="RUXSATNI TEKSHIRISH ✅",
         verification_info_message_text=f"1WIN hisobingizning screenshotini {SUPPORT_USERNAME} ga yuboring botga kirish uchun.\n"
                                        "(Faqat 1WIN ga depozit qilganingizdan keyin screenshot yuboring)",
         no_permission_text="Xatolik, sizda botga kirish huquqi yo'q.\n"
                            "Muammoni hal qilish uchun supportga murojaat qiling.",
-        contact_support_button="SUPPORT BILAN BOG'LANISH",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="SUPPORT BILAN BOG'LANISH 🧑‍💻",
         open_ios_text="Web App iOS ni oching",
         open_android_text="Android | Windows ni oching",
         webapp="WEB App:",
     ),
     'ag': Localization(
         link="https://1wqumw.life/casino/list?open=register&p=suc8",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
@@ -184,23 +179,22 @@ LOCALE = {
                         "(El bot solo funciona con dinero real)\n\n"
                         "3. Después de registrarte y hacer el depósito, envía una captura de pantalla a\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="REGÍSTRATE AQUÍ",
-        get_signal_button="OBTENER SEÑAL",
+        register_button="REGÍSTRATE AQUÍ 🚀",
+        get_signal_button="OBTENER SEÑAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA",
-        check_permission_button="VERIFICAR PERMISO",
+        check_permission_button="VERIFICAR PERMISO ✅",
         verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot.\n"
                                        "(Solo envía la captura después de haber hecho un depósito en 1WIN)",
         no_permission_text="Error, no tienes acceso al bot.\n"
                            "Contacta al soporte para resolver el problema.",
-        contact_support_button="CONTACTAR SOPORTE",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="CONTACTAR SOPORTE 🧑‍💻",
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
     ),
     'ch': Localization(
         link="https://1wbsjy.life/casino/list?open=register&p=sdsj",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
@@ -218,23 +212,22 @@ LOCALE = {
                         "(El bot solo funciona con dinero real)\n\n"
                         "3. Después de registrarte y hacer el depósito, envía una captura de pantalla a\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="REGÍSTRATE AQUÍ",
-        get_signal_button="OBTENER SEÑAL",
+        register_button="REGÍSTRATE AQUÍ 🚀",
+        get_signal_button="OBTENER SEÑAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA",
-        check_permission_button="VERIFICAR PERMISO",
+        check_permission_button="VERIFICAR PERMISO ✅",
         verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot.\n"
                                        "(Solo envía la captura después de haber hecho un depósito en 1WIN)",
         no_permission_text="Error, no tienes acceso al bot.\n"
                            "Contacta al soporte para resolver el problema.",
-        contact_support_button="CONTACTAR SOPORTE",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="CONTACTAR SOPORTE 🧑‍💻",
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
     ),
     'bn': Localization(
         link="https://1wltu.com/casino/list?open=register&p=vd4a",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Swaagata, ",
         greeting_welcome_end="tumi ki taka kamate prastuta? 💰\n"
                              "Ei bot byabohar korar janya, channel-e subscribe karo:",
@@ -252,23 +245,22 @@ LOCALE = {
                         "(Bot shudhu real money-er jonno kaj kore)\n\n"
                         "3. Register kore ebong deposit korar por, screenshot pathao\n"
                         f"{SUPPORT_USERNAME} ke",
-        register_button="REGISTER KORO",
-        get_signal_button="SIGNAL PAO",
+        register_button="REGISTER KORO 🚀",
+        get_signal_button="SIGNAL PAO 🤖",
         send_screenshot_button_text="SCREENSHOT PATHAO",
-        check_permission_button="PERMISSION CHECK KORO",
+        check_permission_button="PERMISSION CHECK KORO ✅",
         verification_info_message_text=f"1WIN-er account-er screenshot {SUPPORT_USERNAME} ke pathao bot access-er jonno.\n"
                                        "(Shudhu screenshot pathao jakhon tumi 1WIN-e deposit korecho)",
         no_permission_text="Bhulta, tumi bot-er access payo ni.\n"
                            "Samashya samadhan korte support-er shathe jogajog koro.",
-        contact_support_button="SUPPORT-ER SHATHE JOGAJOG KORO",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="SUPPORT-ER SHATHE JOGAJOG KORO 🧑‍💻",
         open_ios_text="Web App iOS kholo",
         open_android_text="Android | Windows kholo",
         webapp="WEB App:",
     ),
     'gh': Localization(
         link="https://1wdld.com/casino/list?open=register&p=j8vq",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
@@ -286,23 +278,22 @@ LOCALE = {
                         "(The bot only works for real money)\n\n"
                         "3. After successfully registering and making a deposit, send screenshot to\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="REGISTER HERE",
-        get_signal_button="GET SIGNAL",
+        register_button="REGISTER HERE 🚀",
+        get_signal_button="GET SIGNAL 🤖",
         send_screenshot_button_text="SEND SCREENSHOT",
-        check_permission_button="CHECK PERMISSION",
+        check_permission_button="CHECK PERMISSION ✅",
         verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot.\n "
                                        "(Only send screenshot AFTER you've made a deposit to 1WIN)",
         no_permission_text="Error, you don't have an access ti the bot.\n "
                            "Contact support to resolve a problem.",
-        contact_support_button="CONTACT SUPPORT",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="CONTACT SUPPORT 🧑‍💻",
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
     ),
     'tr': Localization(
         link="https://1wbpqg.top/casino/list?open=register&p=ycwy",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Hoş geldiniz, ",
         greeting_welcome_end="para kazanmaya hazır mısınız? 💰\n"
                              "Bu botu kullanmak için kanala abone olun:",
@@ -320,23 +311,22 @@ LOCALE = {
                         "(Bot sadece gerçek parayla çalışır)\n\n"
                         "3. Kayıt olduktan ve depozit yaptıktan sonra, ekran görüntüsünü gönderin\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="BURADA KAYDOLUN",
-        get_signal_button="SİNYALİ AL",
+        register_button="BURADA KAYDOLUN 🚀",
+        get_signal_button="SİNYALİ AL 🤖",
         send_screenshot_button_text="EKRAN GÖRÜNTÜSÜ GÖNDER",
-        check_permission_button="İZİNİ KONTROL ET",
+        check_permission_button="İZİNİ KONTROL ET ✅",
         verification_info_message_text=f"1WIN hesabınızın ekran görüntüsünü {SUPPORT_USERNAME} adresine gönderin, bot erişimi için.\n"
                                        "(Sadece 1WIN'e depozit yaptıktan sonra ekran görüntüsü gönderin)",
         no_permission_text="Hata, bot'a erişiminiz yok.\n"
                            "Sorunu çözmek için destek ile iletişime geçin.",
-        contact_support_button="DESTEK İLE İLETİŞİME GEÇİN",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="DESTEK İLE İLETİŞİME GEÇİN 🧑‍💻",
         open_ios_text="Web App iOS'u Aç",
         open_android_text="Android | Windows'u Aç",
         webapp="WEB App:",
     ),
     'br': Localization(
         link="https://1wfwna.life/casino/list?open=register&p=qfcn",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Bem-vindo, ",
         greeting_welcome_end="pronto para ganhar dinheiro? 💰\n"
                              "Para usar este bot, inscreva-se no canal:",
@@ -354,23 +344,22 @@ LOCALE = {
                         "(O bot só funciona com dinheiro real)\n\n"
                         "3. Após se registrar e fazer o depósito, envie a captura de tela para\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="REGISTRE-SE AQUI",
-        get_signal_button="OBTER SINAL",
+        register_button="REGISTRE-SE AQUI 🚀",
+        get_signal_button="OBTER SINAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA DE TELA",
-        check_permission_button="VERIFICAR PERMISSÃO",
+        check_permission_button="VERIFICAR PERMISSÃO ✅",
         verification_info_message_text=f"Envie uma captura de tela da sua conta 1WIN para {SUPPORT_USERNAME} para obter acesso ao bot.\n"
                                        "(Só envie a captura após ter feito um depósito no 1WIN)",
         no_permission_text="Erro, você não tem acesso ao bot.\n"
                            "Entre em contato com o suporte para resolver o problema.",
-        contact_support_button="ENTRAR EM CONTATO COM O SUPORTE",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="ENTRAR EM CONTATO COM O SUPORTE 🧑‍💻",
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
     ),
     'np': Localization(
         link="https://www.youtube.com/",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Swāgat chha, ",
         greeting_welcome_end="timi paisā kamauna tayār chau? 💰\n"
                              "Yo bot prayog garnalai, channel subscribe garna hos:",
@@ -388,23 +377,22 @@ LOCALE = {
                         "(Bot real money sāthmā mātra kām garcha)\n\n"
                         "3. Saphal rūpmā register ra deposit garepachi, screenshot pathāunu hos\n"
                         f"{SUPPORT_USERNAME} mā",
-        register_button="YEHA REGISTER GARNUS",
-        get_signal_button="SIGNAL PRAPT GARNUS",
+        register_button="YEHA REGISTER GARNUS 🚀",
+        get_signal_button="SIGNAL PRAPT GARNUS 🤖",
         send_screenshot_button_text="SCREENSHOT PATHĀUNU HOS",
-        check_permission_button="ANUMATI CHECK GARNUS",
+        check_permission_button="ANUMATI CHECK GARNUS ✅",
         verification_info_message_text=f"1WIN account ko screenshot {SUPPORT_USERNAME} mā pathāunu hos bot access ko lāgi.\n"
                                        "(Screenshot pathāunu hos jab timīle 1WIN mā deposit gareko chhau)",
         no_permission_text="Truti, timīko bot access chhaina.\n"
                            "Samasyā ko samādhān garna lāgi support mā sampark garnu hos.",
-        contact_support_button="SUPPORT KO SAMARK GARNUS",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="SUPPORT KO SAMARK GARNUS 🧑‍💻",
         open_ios_text="Web App iOS kholu hos",
         open_android_text="Android | Windows kholu hos",
         webapp="WEB App:",
     ),
     'pk': Localization(
         link="https://1whfbb.life/casino/list?open=register&p=hmrg",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Khushāmdīd, ",
         greeting_welcome_end="kya aap paisay kamānay ke liye tayyār hain? 💰\n"
                              "Is bot kā istemāl karne ke liye, channel ko subscribe karain:",
@@ -422,23 +410,22 @@ LOCALE = {
                         "(Bot sirf real money ke liye kām kartā hai)\n\n"
                         "3. Registration aur deposit ke bād, screenshot ko\n"
                         f"{SUPPORT_USERNAME} par bhejein",
-        register_button="YAHAN REGISTER KARAIN",
-        get_signal_button="SIGNAL HASIL KARAIN",
+        register_button="YAHAN REGISTER KARAIN 🚀",
+        get_signal_button="SIGNAL HASIL KARAIN 🤖",
         send_screenshot_button_text="SCREENSHOT BHEJEIN",
-        check_permission_button="PERMISSION KO CHECK KARAIN",
+        check_permission_button="PERMISSION KO CHECK KARAIN ✅",
         verification_info_message_text=f"Apne 1WIN account ka screenshot {SUPPORT_USERNAME} ko bhejein bot tak access hasil karne ke liye.\n"
                                        "(Screenshot sirf 1WIN par deposit karne ke baad bhejein)",
         no_permission_text="Ghalti, aap ke paas bot tak access nahi hai.\n"
                            "Masla hal karne ke liye support se rabta karain.",
-        contact_support_button="SUPPORT SE RABTA KARAIN",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="SUPPORT SE RABTA KARAIN 🧑‍💻",
         open_ios_text="Web App iOS ko kholain",
         open_android_text="Android | Windows ko kholain",
         webapp="WEB App:",
     ),
     'ru': Localization(
         link="https://1warlo.top/casino/list?open=register&p=n6pk",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Добро пожаловать, ",
         greeting_welcome_end="готовы зарабатывать деньги? 💰\n"
                              "Чтобы использовать этого бота, подпишитесь на канал:",
@@ -456,23 +443,22 @@ LOCALE = {
                         "(Бот работает только с реальными деньгами)\n\n"
                         "3. После успешной регистрации и внесения депозита отправьте скриншот\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="ЗАРЕГИСТРИРОВАТЬСЯ ЗДЕСЬ",
-        get_signal_button="ПОЛУЧИТЬ СИГНАЛ",
+        register_button="ЗАРЕГИСТРИРОВАТЬСЯ ЗДЕСЬ 🚀",
+        get_signal_button="ПОЛУЧИТЬ СИГНАЛ 🤖",
         send_screenshot_button_text="ОТПРАВИТЬ СКРИНШОТ",
-        check_permission_button="ПРОВЕРИТЬ ДОСТУП",
+        check_permission_button="ПРОВЕРИТЬ ДОСТУП ✅",
         verification_info_message_text=f"Отправьте скриншот вашего аккаунта 1WIN {SUPPORT_USERNAME}, чтобы получить доступ к боту.\n"
                                        "(Отправляйте скриншот только после того, как вы сделали депозит на 1WIN)",
         no_permission_text="Ошибка, у вас нет доступа к боту.\n"
                            "Обратитесь в поддержку для решения проблемы.",
-        contact_support_button="СВЯЗАТЬСЯ С ПОДДЕРЖКОЙ",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="СВЯЗАТЬСЯ С ПОДДЕРЖКОЙ 🧑‍💻",
         open_ios_text="Открыть Web App для iOS",
         open_android_text="Открыть Android | Windows",
         webapp="ВЕБ-приложение:",
     ),
     'esp': Localization(
         link="https://www.youtube.com/",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
@@ -490,23 +476,22 @@ LOCALE = {
                         "(El bot solo funciona con dinero real)\n\n"
                         "3. Después de registrarte y hacer el depósito, envía una captura de pantalla a\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="REGÍSTRATE AQUÍ",
-        get_signal_button="OBTENER SEÑAL",
+        register_button="REGÍSTRATE AQUÍ 🚀",
+        get_signal_button="OBTENER SEÑAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA",
-        check_permission_button="VERIFICAR PERMISO",
+        check_permission_button="VERIFICAR PERMISO ✅",
         verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot.\n"
                                        "(Solo envía la captura después de haber hecho un depósito en 1WIN)",
         no_permission_text="Error, no tienes acceso al bot.\n"
                            "Contacta al soporte para resolver el problema.",
-        contact_support_button="CONTACTAR SOPORTE",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="CONTACTAR SOPORTE 🧑‍💻",
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
     ),
     'en': Localization(
         link="https://www.youtube.com/",
-        link_text="LINK 1WIN",
+        link_text="1WIN",
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
@@ -524,16 +509,15 @@ LOCALE = {
                         "(The bot only works for real money)\n\n"
                         "3. After successfully registering and making a deposit, send screenshot to\n"
                         f"{SUPPORT_USERNAME}",
-        register_button="REGISTER HERE",
-        get_signal_button="GET SIGNAL",
+        register_button="REGISTER HERE 🚀",
+        get_signal_button="GET SIGNAL 🤖",
         send_screenshot_button_text="SEND SCREENSHOT",
-        check_permission_button="CHECK PERMISSION",
+        check_permission_button="CHECK PERMISSION ✅",
         verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot.\n "
                                        "(Only send screenshot AFTER you've made a deposit to 1WIN)",
         no_permission_text="Error, you don't have an access ti the bot.\n "
                            "Contact support to resolve a problem.",
-        contact_support_button="CONTACT SUPPORT",
-        link_to_webapp="https://yemines.online/",
+        contact_support_button="CONTACT SUPPORT 🧑‍💻",
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
