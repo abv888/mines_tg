@@ -31,6 +31,25 @@ async def admin_add_permission_to(
     await session.commit()
 
 
+async def activate_bot_for(
+        session: AsyncSession,
+        tg_id: int
+):
+    query = (
+        update(
+            User
+        )
+        .where(
+            User.telegram_id == tg_id
+        )
+        .values(
+            permission=True
+        )
+    )
+    await session.execute(query)
+    await session.commit()
+
+
 async def check_user_existence(
         session: AsyncSession,
         tg_id: int
@@ -44,7 +63,7 @@ async def check_user_existence(
         )
     )
     result = await session.execute(query)
-    return (result.scalar() is not None) or (tg_id == getenv('ADMIN_ID'))
+    return result.scalar()
 
 async def check_permission(
         session: AsyncSession,
@@ -76,21 +95,32 @@ async def get_localization_for_user(
     result = await session.execute(query)
     return result.scalar().localization
 
-# async def set_localization_for_user(
-#         session: AsyncSession,
-#         user_id: int,
-#         localization: str
-# ):
-#     query = (
-#         update(
-#             User
-#         )
-#         .where(
-#             User.telegram_id == user_id
-#         )
-#         .values(
-#             localization=localization
-#         )
-#     )
-#     await session.execute(query)
-#     await session.commit()
+async def set_localization_for_user(
+        session: AsyncSession,
+        user_id: int,
+        localization: str
+):
+    query = (
+        update(
+            User
+        )
+        .where(
+            User.telegram_id == user_id
+        )
+        .values(
+            localization=localization
+        )
+    )
+    await session.execute(query)
+    await session.commit()
+
+async def get_all_users(
+        session: AsyncSession
+):
+    query = (
+        select(
+            User
+        )
+    )
+    result = await session.execute(query)
+    return result.scalars()

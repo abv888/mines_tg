@@ -1,6 +1,7 @@
 import asyncio
 
 import telebot.async_telebot as telebot
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from telebot import types
 
 import os
@@ -22,13 +23,11 @@ from db.requests import (
     check_user_existence,
     get_localization_for_user,
     check_permission,
-    admin_add_permission_to
+    admin_add_permission_to, set_localization_for_user, activate_bot_for, get_all_users
 )
 
-from utils.localization import LOCALE
-from utils.utils import is_subscriber
-
-
+from utils.localization import LOCALE, GREETING_1, GREETING_2, SUPPORT_USERNAME
+from utils.utils import is_subscriber, escape_markdown, send_code_keyboard, display_code, BUTTONS_EMOJI
 
 bot = telebot.AsyncTeleBot(token=os.getenv("BOT_TOKEN"))
 TARGET_CHANNEL = os.getenv("TARGET_CHANNEL")
@@ -38,37 +37,131 @@ ADMIN = os.getenv("ADMIN")
 ADMIN_ID = int(os.getenv("ADMIN_ID"))
 IOS_APP = os.getenv("IOS_APP")
 ANDROID_APP = os.getenv("ANDROID_APP")
+REFERRAL_LINK = os.getenv("REFERRAL_LINK")
+ACTIVATION_CODE = os.getenv("ACTIVATION_CODE")
+CODE_INPUTS = {}
 
 @bot.message_handler(commands=['start'])
 async def start(message):
     async with session_maker() as session:
-        if await check_user_existence(session, message.from_user.id):
-            localization = await get_localization_for_user(
-                session=session,
-                user_id=message.from_user.id
+        if await check_user_existence(session, message.from_user.id) is None:
+            user = User(
+                telegram_id=message.from_user.id,
+                full_name=message.from_user.full_name,
+                localization='en',
+                username=message.from_user.username,
+                permission=False
             )
+            session.add(user)
+            await session.commit()
+        keyboard = types.InlineKeyboardMarkup(
+            row_width=1
+        )
+        next_step_button = types.InlineKeyboardButton(
+            text=f"NEXT STEP👞",
+            callback_data="check_subscription"
+        )
+        keyboard.add(
+            next_step_button
+        )
+        await bot.send_message(chat_id=message.from_user.id,
+                               text=f"{GREETING_1}, {message.from_user.username}, "
+                                    f"{GREETING_2}",
+                               reply_markup=keyboard,
+                               disable_web_page_preview=True,
+                               parse_mode="HTML"
+                               )
+
+
+
+@bot.callback_query_handler(func=lambda call:True)
+async def callback_inline(call):
+    async with session_maker() as session:
+        if call.data == "start_message":
+            if await is_subscriber(
+                    bot=bot,
+                    channel_id=TARGET_CHANNEL_ID,
+                    user_id=call.message.chat.id
+            ):
+                keyboard = types.InlineKeyboardMarkup(
+                    row_width=1
+                )
+                next_step_button = types.InlineKeyboardButton(
+                    text=f"NEXT STEP👞",
+                    callback_data="check_subscription"
+                )
+                keyboard.add(
+                    next_step_button
+                )
+                await bot.send_message(chat_id=call.message.chat.id,
+                                       text=f"{GREETING_1}, {call.message.from_user.username}, "
+                                            f"{GREETING_2}",
+                                       reply_markup=keyboard,
+                                       disable_web_page_preview=True,
+                                       parse_mode="HTML"
+                                       )
+            else:
+                call.data = "check_subscription"
+        if call.data == "check_subscription":
+            if await is_subscriber(
+                    bot=bot,
+                    channel_id=TARGET_CHANNEL_ID,
+                    user_id=call.message.chat.id
+            ):
+                call.data = "subscriber"
+            else:
+                keyboard = types.InlineKeyboardMarkup(
+                    row_width=1
+                )
+                subscribe_button = types.InlineKeyboardButton(
+                    text="Subscribe",
+                    url=TARGET_CHANNEL
+                )
+                check_button = types.InlineKeyboardButton(
+                    text="✅ Check",
+                    callback_data="start_message"
+                )
+                keyboard.add(
+                    subscribe_button,
+                    check_button
+                )
+                await bot.send_message(
+                    chat_id=call.message.chat.id,
+                    text="❗️ Error!\n"
+                         "You have not subscribed to the channel.",
+                    reply_markup=keyboard
+                )
+        if call.data == "subscriber":
             keyboard = types.InlineKeyboardMarkup(
                 row_width=1
             )
-            subscribe_button = types.InlineKeyboardButton(
-                text=f"{LOCALE[localization].subscribe[0]}",
-                url=TARGET_CHANNEL
+            instruction_button = types.InlineKeyboardButton(
+                text="How does the bot work? 🤖",
+                callback_data="instruction"
             )
-            check_button = types.InlineKeyboardButton(
-                text=f"{LOCALE[localization].already_subscribed[0]}",
-                callback_data="check_subscription"
+            keyboard.add(instruction_button)
+            await bot.send_message(
+                chat_id=call.message.chat.id,
+                text="Great, you have subscribed to the channel.🎉",
+                reply_markup=keyboard
             )
-            keyboard.add(
-                subscribe_button,
-                check_button
+        if call.data == "instruction":
+            keyboard = types.InlineKeyboardMarkup(
+                row_width=1
             )
-            await bot.send_message(chat_id=message.from_user.id,
-                                   text=f"{LOCALE[localization].greeting_welcome_start[0]}, {message.from_user.username}, "
-                                        f"{LOCALE[localization].greeting_welcome_end[0]}",
-                                   reply_markup=keyboard,
-                                   parse_mode="Markdown"
-                                   )
-        else:
+            choose_language = types.InlineKeyboardButton(
+                text="Start earning money 💰",
+                callback_data="choose_language"
+            )
+            keyboard.add(choose_language)
+            await bot.send_message(
+                chat_id=call.message.chat.id,
+                # video="",
+                text=f"||For the bot to work correctly, the minimum bet is $6||",
+                reply_markup=keyboard,
+                parse_mode="MarkdownV2"
+            )
+        if call.data == "choose_language":
             keyboard = types.InlineKeyboardMarkup(
                 row_width=2
             )
@@ -144,242 +237,156 @@ async def start(message):
                 esp_button,
                 en_button
             )
-            await bot.send_message(chat_id=message.chat.id,
+            await bot.send_message(chat_id=call.message.chat.id,
                                    text="Select your country 🌍",
                                    reply_markup=keyboard)
-
-
-@bot.callback_query_handler(func=lambda call:True)
-async def callback_inline(call):
-    async with session_maker() as session:
         if call.data in LOCALE.keys():
-            user = User(
-                telegram_id=call.message.chat.id,
-                full_name=call.from_user.full_name,
-                localization=call.data,
-                username=call.from_user.username,
-                permission=False
+            await set_localization_for_user(
+                session=session,
+                user_id=call.message.chat.id,
+                localization=call.data
             )
-            session.add(user)
-            await session.commit()
-            keyboard = types.InlineKeyboardMarkup(
-                row_width=1
-            )
-            subscribe_button = types.InlineKeyboardButton(
-                text=LOCALE[call.data].subscribe[0],
-                url=TARGET_CHANNEL
-            )
-            check_button = types.InlineKeyboardButton(
-                text=LOCALE[call.data].already_subscribed[0],
-                callback_data="check_subscription"
-            )
-            keyboard.add(
-                subscribe_button,
-                check_button
-            )
-            await bot.delete_message(
-                chat_id=call.message.chat.id,
-                message_id=call.message.id
-            )
-            await bot.send_message(chat_id=call.message.chat.id,
-                                   text=f"{LOCALE[call.data].greeting_welcome_start[0]}, {call.from_user.username}"
-                                        f"{LOCALE[call.data].greeting_welcome_end[0]}",
-                                   reply_markup=keyboard
-                                   )
-        else:
+            call.data = "registration"
+        if call.data == "registration":
             language = await get_localization_for_user(
                 session=session,
                 user_id=call.message.chat.id
             )
-            if call.data == "check_subscription":
-                if await is_subscriber(
-                        bot=bot,
-                        channel_id=TARGET_CHANNEL_ID,
-                        user_id=call.message.chat.id
-                ):
-                    call.data = "subscriber"
-                else:
-                    await bot.answer_callback_query(
-                        callback_query_id=call.id,
-                        show_alert=True,
-                        text=LOCALE[language].error_subscription[0]
-                    )
-                    await bot.delete_message(
-                        chat_id=call.message.chat.id,
-                        message_id=call.message.id
-                    )
-                    keyboard = types.InlineKeyboardMarkup(
-                        row_width=1
-                    )
-                    subscribe_button = types.InlineKeyboardButton(
-                        text=LOCALE[call.data].subscribe[0],
-                        url=TARGET_CHANNEL
-                    )
-                    check_button = types.InlineKeyboardButton(
-                        text=LOCALE[call.data].already_subscribed[0],
-                        callback_data="check_subscription"
-                    )
-                    keyboard.add(
-                        subscribe_button,
-                        check_button
-                    )
-                    await bot.delete_message(
-                        chat_id=call.message.chat.id,
-                        message_id=call.message.id
-                    )
-                    await bot.send_message(chat_id=call.message.chat.id,
-                                           text=f"{LOCALE[call.data].greeting_welcome_start[0]}, {call.from_user.username}"
-                                                f"{LOCALE[call.data].greeting_welcome_end[0]}",
-                                           reply_markup=keyboard
-                                           )
-            if call.data == "subscriber":
-                keyboard = types.InlineKeyboardMarkup(
-                    row_width=1
-                )
-                instruction_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].how_does_the_bot_work,
-                    callback_data="instruction"
-                )
-                keyboard.add(instruction_button)
-                await bot.delete_message(
-                    chat_id=call.message.chat.id,
-                    message_id=call.message.id
-                )
+            keyboard = types.InlineKeyboardMarkup(
+                row_width=1
+            )
+            register_button = types.InlineKeyboardButton(
+                text="REGISTER HERE ⛓️",
+                url=LOCALE[language].link
+            )
+            get_signal_button = types.InlineKeyboardButton(
+                text="GET SIGNAL",
+                callback_data="get_signal"
+            )
+            keyboard.add(
+                register_button,
+                get_signal_button
+            )
+            await bot.send_photo(
+                photo=open(f"resources/{language}.jpg", "rb"),
+                chat_id=call.message.chat.id,
+                caption=f"{LOCALE[language].register_text_1[0]}"
+                     f"<a href='{REFERRAL_LINK}' style='text-decoration:none'>{LOCALE[language].link_text[0]}</a>"
+                     f"{LOCALE[language].register_text_2[0]}",
+                reply_markup=keyboard,
+                parse_mode="HTML"
+            )
+        if call.data == "get_signal":
+            language = await get_localization_for_user(
+                session=session,
+                user_id=call.message.chat.id
+            )
+            keyboard = types.InlineKeyboardMarkup(
+                row_width=1
+            )
+            send_screenshot_button = types.InlineKeyboardButton(
+                text="SEND SCREENSHOT",
+                url=SUPPORT_LINK
+            )
+            check_permission_button = types.InlineKeyboardButton(
+                text="ACTIVATE BOT 🔑",
+                callback_data="activation"
+            )
+            keyboard.add(send_screenshot_button, check_permission_button)
+            await bot.send_photo(
+                photo=open(f"resources/account_screen.jpg", "rb"),
+                chat_id=call.message.chat.id,
+                caption=f"{LOCALE[language].verification_info_message_text[0]}",
+                reply_markup=keyboard
+            )
+            await bot.send_photo(
+                photo=open(f"resources/send_screenshot.jpg", "rb"),
+                chat_id=call.message.chat.id
+            )
+        if call.data == "activation":
+            if await check_permission(
+                session=session,
+                tg_username=call.message.from_user.username
+            ):
+                call.data = "referral"
+            else:
+                CODE_INPUTS[call.message.chat.id] = ""
+                markup = types.InlineKeyboardMarkup(row_width=3)
+                buttons = [
+                    types.InlineKeyboardButton(text=button, callback_data=str(i + 1))
+                    for i, button in enumerate(BUTTONS_EMOJI)
+                ]
+                buttons.append(types.InlineKeyboardButton(text="0️⃣", callback_data="0"))
+                markup.add(*buttons)
+
                 await bot.send_message(
-                    chat_id=call.message.chat.id,
-                    text=LOCALE[language].subscriber[0],
-                    reply_markup=keyboard
+                    call.message.chat.id,
+                    "🔑ENTER ACTIVATION KEY🔑\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️\n\nKey: " + display_code(
+                        CODE_INPUTS[call.message.chat.id]),
+                    reply_markup=markup
                 )
-            if call.data == "instruction":
-                keyboard = types.InlineKeyboardMarkup(
-                    row_width=1
+        if call.data.isdigit():
+            user_id = call.message.chat.id
+            if user_id not in CODE_INPUTS.keys():
+                CODE_INPUTS[user_id] = ""
+            if len(CODE_INPUTS[user_id]) < 6:
+                CODE_INPUTS[user_id] = CODE_INPUTS[user_id] + call.data
+                await bot.edit_message_text(
+                    chat_id=user_id,
+                    message_id=call.message.message_id,
+                    text="🔑ENTER ACTIVATION KEY🔑\n⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️\n\nKey: " + display_code(CODE_INPUTS[user_id]),
+                    reply_markup=call.message.reply_markup
                 )
-                start_earning_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].start_earning[0],
-                    callback_data="registration"
-                )
-                keyboard.add(start_earning_button)
-                await bot.delete_message(
-                    chat_id=call.message.chat.id,
-                    message_id=call.message.id
-                )
-                await bot.send_message(
-                    chat_id=call.message.chat.id,
-                    # video="",
-                    text=LOCALE[language].gift[0],
-                    reply_markup=keyboard
-                )
-            if call.data == "registration":
-                keyboard = types.InlineKeyboardMarkup(
-                    row_width=1
-                )
-                register_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].register_button[0],
-                    url=LOCALE[language].link
-                )
-                get_signal_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].get_signal_button[0],
-                    callback_data="get_signal"
-                )
-                keyboard.add(register_button, get_signal_button)
-                await bot.delete_message(
-                    chat_id=call.message.chat.id,
-                    message_id=call.message.id
-                )
-                await bot.send_photo(
-                    photo=open(f"resources/{language}.jpg", "rb"),
-                    chat_id=call.message.chat.id,
-                    caption=f"{LOCALE[language].register_text_1[0]}"
-                         f"<a href='{LOCALE[language].link}' style='text-decoration:none'>{LOCALE[language].link_text[0]}</a>"
-                         f"{LOCALE[language].register_text_2[0]}",
-                    reply_markup=keyboard,
-                    parse_mode="HTML"
-                )
-            if call.data == "get_signal":
-                keyboard = types.InlineKeyboardMarkup(
-                    row_width=1
-                )
-                send_screenshot_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].send_screenshot_button_text[0],
-                    url=SUPPORT_LINK
-                )
-                check_permission_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].check_permission_button[0],
-                    callback_data="check_permission"
-                )
-                keyboard.add(send_screenshot_button, check_permission_button)
-                await bot.delete_message(
-                    chat_id=call.message.chat.id,
-                    message_id=call.message.id
-                )
-                # await bot.send_media_group(
-                #     chat_id=call.message.chat.id,
-                #     media=[]
-                # )
-                await bot.send_message(
-                    chat_id=call.message.chat.id,
-                    text=f"{LOCALE[language].verification_info_message_text[0]}",
-                    reply_markup=keyboard
-                )
-            if call.data == "check_permission":
-                if await check_permission(
-                    session=session,
-                    tg_username=call.message.chat.username
-                ):
+            if len(CODE_INPUTS[user_id]) == 6:
+                await bot.answer_callback_query(call.id)
+                if CODE_INPUTS[user_id] == ACTIVATION_CODE:
                     call.data = "referral"
+                    await activate_bot_for(
+                        session=session,
+                        tg_id=user_id
+                    )
                 else:
-                    keyboard = types.InlineKeyboardMarkup(
-                        row_width=1
-                    )
-                    contact_support_button = types.InlineKeyboardButton(
-                        text=LOCALE[language].contact_support_button[0],
-                        url=SUPPORT_LINK
-                    )
-                    check_permission_button = types.InlineKeyboardButton(
-                        text=LOCALE[language].check_permission_button[0],
-                        callback_data="check_permission"
-                    )
-                    keyboard.add(contact_support_button, check_permission_button)
-                    await bot.delete_message(
-                        chat_id=call.message.chat.id,
-                        message_id=call.message.id
-                    )
                     await bot.send_message(
-                        chat_id=call.message.chat.id,
-                        text=LOCALE[language].no_permission_text[0],
-                        reply_markup=keyboard
+                        chat_id=user_id,
+                        text="❌<b>INCORRECT ACTIVATION KEY</b>❌\n"
+                             f"To get the key 🔑, send a screenshot of your 1WIN account to support {SUPPORT_USERNAME}",
+                        parse_mode="HTML"
                     )
-            if call.data == "referral":
-                keyboard = types.InlineKeyboardMarkup(
-                    row_width=1
+                CODE_INPUTS.pop(
+                    user_id,
+                    None
                 )
-                ios_webapp = types.WebAppInfo(
-                    url=IOS_APP,
-                )
-                android_webapp = types.WebAppInfo(
-                    url=ANDROID_APP,
-                )
-                ios_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].open_ios_text[0],
-                    web_app=ios_webapp
-                )
-                android_button = types.InlineKeyboardButton(
-                    text=LOCALE[language].open_android_text[0],
-                    web_app=android_webapp
-                )
-                keyboard.add(
-                    ios_button,
-                    android_button
-                )
-                await bot.delete_message(
-                    chat_id=call.message.chat.id,
-                    message_id=call.message.id
-                )
-                await bot.send_message(
-                    chat_id=call.message.chat.id,
-                    text=f"{LOCALE[language].webapp}",
-                    reply_markup=keyboard
-                )
+        if call.data == "referral":
+            language = await get_localization_for_user(
+                session=session,
+                user_id=call.message.chat.id
+            )
+            keyboard = types.InlineKeyboardMarkup(
+                row_width=1
+            )
+            ios_webapp = types.WebAppInfo(
+                url=IOS_APP,
+            )
+            android_webapp = types.WebAppInfo(
+                url=ANDROID_APP,
+            )
+            ios_button = types.InlineKeyboardButton(
+                text=LOCALE[language].open_ios_text[0],
+                web_app=ios_webapp
+            )
+            android_button = types.InlineKeyboardButton(
+                text=LOCALE[language].open_android_text[0],
+                web_app=android_webapp
+            )
+            keyboard.add(
+                ios_button,
+                android_button
+            )
+            await bot.send_message(
+                chat_id=call.message.chat.id,
+                text=f"{LOCALE[language].webapp[0]}",
+                reply_markup=keyboard
+            )
 
 
 @bot.message_handler(
@@ -397,12 +404,27 @@ async def admin_command_handler(message):
                 tg_username=username
             )
 
+async def send_daily_notification():
+    async with session_maker() as session:
+        users = await get_all_users(session)
+        for user in users:
+            await bot.send_message(
+                chat_id=user.telegram_id,
+                text="Are you not earning with us yet? 🤷‍♂️😳\n\n"
+                     "Hurry up and /start \n"
+                     "And in 5 minutes you will get the first magic signal that will multiply your money 💰"
+            )
+
 async def on_startup():
+    scheduler.start()
     run_param = False
     if run_param:
         await drop_db()
 
     await create_db()
+
+scheduler = AsyncIOScheduler()
+scheduler.add_job(send_daily_notification, "cron", day_of_week="mon-sun", hour=13, minute=0)
 
 async def main():
     await on_startup()

@@ -4,6 +4,7 @@ load_dotenv(find_dotenv())
 
 SUPPORT_USERNAME = os.getenv("SUPPORT_USERNAME")
 PROMO_CODE = os.getenv("PROMO_CODE")
+CHANNEL_LINK = os.getenv("TARGET_CHANNEL")
 
 
 class Localization:
@@ -13,6 +14,7 @@ class Localization:
             link_text: str,
             greeting_welcome_start: str,
             greeting_welcome_end: str,
+            telegram_channel_text,
             subscribe: str,
             already_subscribed: str,
             error_subscription:str,
@@ -31,12 +33,14 @@ class Localization:
             contact_support_button: str,
             open_ios_text: str,
             open_android_text: str,
-            webapp: str
+            webapp: str,
+            push
     ):
         self.link = link
         self.link_text = link_text,
         self.greeting_welcome_start = greeting_welcome_start,
         self.greeting_welcome_end = greeting_welcome_end,
+        self.telegram_channel_text = telegram_channel_text,
         self.subscribe = subscribe,
         self.already_subscribed=already_subscribed,
         self.error_subscription=error_subscription,
@@ -55,9 +59,14 @@ class Localization:
         self.contact_support_button = contact_support_button,
         self.open_ios_text = open_ios_text,
         self.open_android_text = open_android_text,
-        self.webapp = webapp
+        self.webapp = webapp,
+        self.push = push
 
-
+GREETING_1="Welcome"
+GREETING_2=("ready to earn money? 💰\n "
+            "To use this bot, subscribe to the channel:\n"
+            f"➡️<a href='{CHANNEL_LINK}' style='text-decoration:none'>TELEGRAM CHANNEL LINK</a>⬅️"
+            )
 
 LOCALE = {
     'ind_en': Localization(
@@ -65,7 +74,9 @@ LOCALE = {
         link_text="1WIN",
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
-                             "To use this bot, subscribe to the channel:",
+                             "To use this bot, subscribe to the channel:\n"
+                             f"➡️<a href='{CHANNEL_LINK}' style='text-decoration:none'>TELEGRAM CHANNEL LINK</a>⬅️",
+        telegram_channel_text="",
         subscribe="Subscribe",
         already_subscribed="Already subscribed ✅",
         error_subscription="Error! You have not subscribed to the channel.",
@@ -84,7 +95,7 @@ LOCALE = {
         get_signal_button="GET SIGNAL 🤖",
         send_screenshot_button_text="SEND SCREENSHOT",
         check_permission_button="CHECK PERMISSION ✅",
-        verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot.\n "
+        verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot 🔑\n "
                                        "(Only send screenshot AFTER you've made a deposit to 1WIN)",
         no_permission_text="Error, you don't have an access ti the bot.\n "
                            "Contact support to resolve a problem.",
@@ -92,6 +103,7 @@ LOCALE = {
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
+        push="PUSH",
     ),
     'ind_hi': Localization(
         link="https://1wdgx.com/casino/list?open=register&p=ytio",
@@ -99,6 +111,7 @@ LOCALE = {
         greeting_welcome_start="Swāgat hai, ",
         greeting_welcome_end="paisā kamāne ke liye taiyār hain? 💰\n"
                              "Is bot ko istemāl karne ke liye, channel ko subscribe karein:",
+        telegram_channel_text="",
         subscribe="Subscribe karein",
         error_subscription="Error! Aapne channel ko subscribe nahi kiya hai.",
         already_subscribed="pahle se sadasyata li gayi ✅",
@@ -117,7 +130,7 @@ LOCALE = {
         get_signal_button="SIGNAL PRAAPT KARO 🤖",
         send_screenshot_button_text="SCREENSHOT BHEJEIN",
         check_permission_button="PERMISSION CHECK KARO ✅",
-        verification_info_message_text=f"1WIN account ka screenshot {SUPPORT_USERNAME} ko bhejein bot access ke liye.\n"
+        verification_info_message_text=f"1WIN account ka screenshot {SUPPORT_USERNAME} ko bhejein bot access ke liye 🔑\n"
                                        "(Sirf screenshot bhejein jab aapne 1WIN par deposit kar liya ho)",
         no_permission_text="Error, aapko bot tak pahunch nahi hai.\n"
                            "Samasyā ke liye support se sampark karein.",
@@ -125,6 +138,7 @@ LOCALE = {
         open_ios_text="Web App iOS Kholo",
         open_android_text="Android | Windows Kholo",
         webapp="WEB App:",
+        push="PUSH",
     ),
     'uz': Localization(
         link="https://1wayto.life/casino/list?open=register&p=6mqq",
@@ -132,6 +146,7 @@ LOCALE = {
         greeting_welcome_start="Xush kelibsiz, ",
         greeting_welcome_end="pul ishlashga tayyormisiz? 💰\n"
                              "Bu botdan foydalanish uchun, kanalda obuna bo'ling:",
+        telegram_channel_text="",
         subscribe="Obuna bo'lish",
         already_subscribed="Allaqachon obuna bo'lingan ✅",
         error_subscription="Xatolik! Siz kanalga obuna bo'lmadingiz.",
@@ -150,7 +165,7 @@ LOCALE = {
         get_signal_button="SIGNALNI O'LING 🤖",
         send_screenshot_button_text="SCREENSHOT YUBORING",
         check_permission_button="RUXSATNI TEKSHIRISH ✅",
-        verification_info_message_text=f"1WIN hisobingizning screenshotini {SUPPORT_USERNAME} ga yuboring botga kirish uchun.\n"
+        verification_info_message_text=f"1WIN hisobingizning screenshotini {SUPPORT_USERNAME} ga yuboring botga kirish uchun 🔑\n"
                                        "(Faqat 1WIN ga depozit qilganingizdan keyin screenshot yuboring)",
         no_permission_text="Xatolik, sizda botga kirish huquqi yo'q.\n"
                            "Muammoni hal qilish uchun supportga murojaat qiling.",
@@ -158,6 +173,7 @@ LOCALE = {
         open_ios_text="Web App iOS ni oching",
         open_android_text="Android | Windows ni oching",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'ag': Localization(
         link="https://1wqumw.life/casino/list?open=register&p=suc8",
@@ -165,6 +181,7 @@ LOCALE = {
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
+        telegram_channel_text="",
         subscribe="Suscribirse",
         already_subscribed="Ya suscrito ✅",
         error_subscription="¡Error! No te has suscrito al canal.",
@@ -183,7 +200,7 @@ LOCALE = {
         get_signal_button="OBTENER SEÑAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA",
         check_permission_button="VERIFICAR PERMISO ✅",
-        verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot.\n"
+        verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot 🔑\n"
                                        "(Solo envía la captura después de haber hecho un depósito en 1WIN)",
         no_permission_text="Error, no tienes acceso al bot.\n"
                            "Contacta al soporte para resolver el problema.",
@@ -191,6 +208,7 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'ch': Localization(
         link="https://1wbsjy.life/casino/list?open=register&p=sdsj",
@@ -198,6 +216,7 @@ LOCALE = {
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
+        telegram_channel_text="",
         subscribe="Suscribirse",
         already_subscribed="Ya suscrito ✅",
         error_subscription="¡Error! No te has suscrito al canal.",
@@ -216,7 +235,7 @@ LOCALE = {
         get_signal_button="OBTENER SEÑAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA",
         check_permission_button="VERIFICAR PERMISO ✅",
-        verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot.\n"
+        verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot 🔑\n"
                                        "(Solo envía la captura después de haber hecho un depósito en 1WIN)",
         no_permission_text="Error, no tienes acceso al bot.\n"
                            "Contacta al soporte para resolver el problema.",
@@ -224,6 +243,7 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'bn': Localization(
         link="https://1wltu.com/casino/list?open=register&p=vd4a",
@@ -231,6 +251,7 @@ LOCALE = {
         greeting_welcome_start="Swaagata, ",
         greeting_welcome_end="tumi ki taka kamate prastuta? 💰\n"
                              "Ei bot byabohar korar janya, channel-e subscribe karo:",
+        telegram_channel_text="",
         subscribe="Subscribe karo",
         already_subscribed="itimodhye sabscraib kora hoyeche ✅",
         error_subscription="Bhulta! Tumi channel-e subscribe karo ni.",
@@ -249,7 +270,7 @@ LOCALE = {
         get_signal_button="SIGNAL PAO 🤖",
         send_screenshot_button_text="SCREENSHOT PATHAO",
         check_permission_button="PERMISSION CHECK KORO ✅",
-        verification_info_message_text=f"1WIN-er account-er screenshot {SUPPORT_USERNAME} ke pathao bot access-er jonno.\n"
+        verification_info_message_text=f"1WIN-er account-er screenshot {SUPPORT_USERNAME} ke pathao bot access-er jonno 🔑\n"
                                        "(Shudhu screenshot pathao jakhon tumi 1WIN-e deposit korecho)",
         no_permission_text="Bhulta, tumi bot-er access payo ni.\n"
                            "Samashya samadhan korte support-er shathe jogajog koro.",
@@ -257,6 +278,7 @@ LOCALE = {
         open_ios_text="Web App iOS kholo",
         open_android_text="Android | Windows kholo",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'gh': Localization(
         link="https://1wdld.com/casino/list?open=register&p=j8vq",
@@ -264,6 +286,7 @@ LOCALE = {
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
+        telegram_channel_text="",
         subscribe="Subscribe",
         already_subscribed="Already subscribed ✅",
         error_subscription="Error! You have not subscribed to the channel.",
@@ -282,7 +305,7 @@ LOCALE = {
         get_signal_button="GET SIGNAL 🤖",
         send_screenshot_button_text="SEND SCREENSHOT",
         check_permission_button="CHECK PERMISSION ✅",
-        verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot.\n "
+        verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot 🔑\n "
                                        "(Only send screenshot AFTER you've made a deposit to 1WIN)",
         no_permission_text="Error, you don't have an access ti the bot.\n "
                            "Contact support to resolve a problem.",
@@ -290,6 +313,7 @@ LOCALE = {
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'tr': Localization(
         link="https://1wbpqg.top/casino/list?open=register&p=ycwy",
@@ -297,6 +321,7 @@ LOCALE = {
         greeting_welcome_start="Hoş geldiniz, ",
         greeting_welcome_end="para kazanmaya hazır mısınız? 💰\n"
                              "Bu botu kullanmak için kanala abone olun:",
+        telegram_channel_text="",
         subscribe="Abone Ol",
         already_subscribed="Zaten abone olundu ✅",
         error_subscription="Hata! Kanala abone olmadınız.",
@@ -315,7 +340,7 @@ LOCALE = {
         get_signal_button="SİNYALİ AL 🤖",
         send_screenshot_button_text="EKRAN GÖRÜNTÜSÜ GÖNDER",
         check_permission_button="İZİNİ KONTROL ET ✅",
-        verification_info_message_text=f"1WIN hesabınızın ekran görüntüsünü {SUPPORT_USERNAME} adresine gönderin, bot erişimi için.\n"
+        verification_info_message_text=f"1WIN hesabınızın ekran görüntüsünü {SUPPORT_USERNAME} adresine gönderin, bot erişimi için 🔑\n"
                                        "(Sadece 1WIN'e depozit yaptıktan sonra ekran görüntüsü gönderin)",
         no_permission_text="Hata, bot'a erişiminiz yok.\n"
                            "Sorunu çözmek için destek ile iletişime geçin.",
@@ -323,6 +348,7 @@ LOCALE = {
         open_ios_text="Web App iOS'u Aç",
         open_android_text="Android | Windows'u Aç",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'br': Localization(
         link="https://1wfwna.life/casino/list?open=register&p=qfcn",
@@ -330,6 +356,7 @@ LOCALE = {
         greeting_welcome_start="Bem-vindo, ",
         greeting_welcome_end="pronto para ganhar dinheiro? 💰\n"
                              "Para usar este bot, inscreva-se no canal:",
+        telegram_channel_text="",
         subscribe="Inscreva-se",
         already_subscribed="Já inscrito ✅",
         error_subscription="Erro! Você não se inscreveu no canal.",
@@ -348,7 +375,7 @@ LOCALE = {
         get_signal_button="OBTER SINAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA DE TELA",
         check_permission_button="VERIFICAR PERMISSÃO ✅",
-        verification_info_message_text=f"Envie uma captura de tela da sua conta 1WIN para {SUPPORT_USERNAME} para obter acesso ao bot.\n"
+        verification_info_message_text=f"Envie uma captura de tela da sua conta 1WIN para {SUPPORT_USERNAME} para obter acesso ao bot 🔑\n"
                                        "(Só envie a captura após ter feito um depósito no 1WIN)",
         no_permission_text="Erro, você não tem acesso ao bot.\n"
                            "Entre em contato com o suporte para resolver o problema.",
@@ -356,6 +383,7 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'np': Localization(
         link="https://www.youtube.com/",
@@ -363,6 +391,7 @@ LOCALE = {
         greeting_welcome_start="Swāgat chha, ",
         greeting_welcome_end="timi paisā kamauna tayār chau? 💰\n"
                              "Yo bot prayog garnalai, channel subscribe garna hos:",
+        telegram_channel_text="",
         subscribe="Subscribe garna hos",
         already_subscribed="pahile nai sadasyata liieko ✅",
         error_subscription="Truti! Timi channel subscribe gareko chhaina.",
@@ -381,7 +410,7 @@ LOCALE = {
         get_signal_button="SIGNAL PRAPT GARNUS 🤖",
         send_screenshot_button_text="SCREENSHOT PATHĀUNU HOS",
         check_permission_button="ANUMATI CHECK GARNUS ✅",
-        verification_info_message_text=f"1WIN account ko screenshot {SUPPORT_USERNAME} mā pathāunu hos bot access ko lāgi.\n"
+        verification_info_message_text=f"1WIN account ko screenshot {SUPPORT_USERNAME} mā pathāunu hos bot access ko lāgi 🔑\n"
                                        "(Screenshot pathāunu hos jab timīle 1WIN mā deposit gareko chhau)",
         no_permission_text="Truti, timīko bot access chhaina.\n"
                            "Samasyā ko samādhān garna lāgi support mā sampark garnu hos.",
@@ -389,6 +418,7 @@ LOCALE = {
         open_ios_text="Web App iOS kholu hos",
         open_android_text="Android | Windows kholu hos",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'pk': Localization(
         link="https://1whfbb.life/casino/list?open=register&p=hmrg",
@@ -396,6 +426,7 @@ LOCALE = {
         greeting_welcome_start="Khushāmdīd, ",
         greeting_welcome_end="kya aap paisay kamānay ke liye tayyār hain? 💰\n"
                              "Is bot kā istemāl karne ke liye, channel ko subscribe karain:",
+        telegram_channel_text="",
         subscribe="Subscribe karain",
         already_subscribed="pehle hi subscribe kiya hua ✅",
         error_subscription="Ghalti! Aap ne channel ko subscribe nahi kiya.",
@@ -414,7 +445,7 @@ LOCALE = {
         get_signal_button="SIGNAL HASIL KARAIN 🤖",
         send_screenshot_button_text="SCREENSHOT BHEJEIN",
         check_permission_button="PERMISSION KO CHECK KARAIN ✅",
-        verification_info_message_text=f"Apne 1WIN account ka screenshot {SUPPORT_USERNAME} ko bhejein bot tak access hasil karne ke liye.\n"
+        verification_info_message_text=f"Apne 1WIN account ka screenshot {SUPPORT_USERNAME} ko bhejein bot tak access hasil karne ke liye 🔑\n"
                                        "(Screenshot sirf 1WIN par deposit karne ke baad bhejein)",
         no_permission_text="Ghalti, aap ke paas bot tak access nahi hai.\n"
                            "Masla hal karne ke liye support se rabta karain.",
@@ -422,6 +453,7 @@ LOCALE = {
         open_ios_text="Web App iOS ko kholain",
         open_android_text="Android | Windows ko kholain",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'ru': Localization(
         link="https://1warlo.top/casino/list?open=register&p=n6pk",
@@ -429,6 +461,7 @@ LOCALE = {
         greeting_welcome_start="Добро пожаловать, ",
         greeting_welcome_end="готовы зарабатывать деньги? 💰\n"
                              "Чтобы использовать этого бота, подпишитесь на канал:",
+        telegram_channel_text="",
         subscribe="Подписаться",
         already_subscribed="Уже подписан ✅",
         error_subscription="Ошибка! Вы не подписались на канал.",
@@ -447,7 +480,7 @@ LOCALE = {
         get_signal_button="ПОЛУЧИТЬ СИГНАЛ 🤖",
         send_screenshot_button_text="ОТПРАВИТЬ СКРИНШОТ",
         check_permission_button="ПРОВЕРИТЬ ДОСТУП ✅",
-        verification_info_message_text=f"Отправьте скриншот вашего аккаунта 1WIN {SUPPORT_USERNAME}, чтобы получить доступ к боту.\n"
+        verification_info_message_text=f"Отправьте скриншот вашего аккаунта 1WIN {SUPPORT_USERNAME}, чтобы получить доступ к боту 🔑\n"
                                        "(Отправляйте скриншот только после того, как вы сделали депозит на 1WIN)",
         no_permission_text="Ошибка, у вас нет доступа к боту.\n"
                            "Обратитесь в поддержку для решения проблемы.",
@@ -455,6 +488,7 @@ LOCALE = {
         open_ios_text="Открыть Web App для iOS",
         open_android_text="Открыть Android | Windows",
         webapp="ВЕБ-приложение:",
+        push="PUSH"
     ),
     'esp': Localization(
         link="https://www.youtube.com/",
@@ -462,6 +496,7 @@ LOCALE = {
         greeting_welcome_start="Bienvenido, ",
         greeting_welcome_end="¿Listo para ganar dinero? 💰\n"
                              "Para usar este bot, suscríbete al canal:",
+        telegram_channel_text="",
         subscribe="Suscribirse",
         already_subscribed="Ya suscrito ✅",
         error_subscription="¡Error! No te has suscrito al canal.",
@@ -480,7 +515,7 @@ LOCALE = {
         get_signal_button="OBTENER SEÑAL 🤖",
         send_screenshot_button_text="ENVIAR CAPTURA",
         check_permission_button="VERIFICAR PERMISO ✅",
-        verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot.\n"
+        verification_info_message_text=f"Envía una captura de pantalla de tu cuenta de 1WIN a {SUPPORT_USERNAME} para obtener acceso al bot 🔑\n"
                                        "(Solo envía la captura después de haber hecho un depósito en 1WIN)",
         no_permission_text="Error, no tienes acceso al bot.\n"
                            "Contacta al soporte para resolver el problema.",
@@ -488,6 +523,7 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
+        push="PUSH"
     ),
     'en': Localization(
         link="https://www.youtube.com/",
@@ -495,6 +531,7 @@ LOCALE = {
         greeting_welcome_start="Welcome, ",
         greeting_welcome_end="ready to earn money? 💰\n "
                              "To use this bot, subscribe to the channel:",
+        telegram_channel_text="",
         subscribe="Subscribe",
         already_subscribed="Already subscribed ✅",
         error_subscription="Error! You have not subscribed to the channel.",
@@ -513,7 +550,7 @@ LOCALE = {
         get_signal_button="GET SIGNAL 🤖",
         send_screenshot_button_text="SEND SCREENSHOT",
         check_permission_button="CHECK PERMISSION ✅",
-        verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot.\n "
+        verification_info_message_text=f"Send a screenshot of tour 1WIN account to {SUPPORT_USERNAME} to get access to the bot 🔑\n "
                                        "(Only send screenshot AFTER you've made a deposit to 1WIN)",
         no_permission_text="Error, you don't have an access ti the bot.\n "
                            "Contact support to resolve a problem.",
@@ -521,6 +558,7 @@ LOCALE = {
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
+        push="PUSH"
     )
 
 }

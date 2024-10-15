@@ -4,3 +4,4 @@ telebot
 aiosqlite
 sqlalchemy
 aiohttp
+apscheduler
