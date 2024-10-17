@@ -299,10 +299,57 @@ async def callback_inline(call):
                 caption=f"{LOCALE[language].verification_info_message_text[0]}",
                 reply_markup=keyboard
             )
-            await bot.send_photo(
-                photo=open(f"resources/send_screenshot.jpg", "rb"),
-                chat_id=call.message.chat.id
-            )
+            if language == "en" or language == "ind_en" or language == "gh":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_en.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "esp" or language == "ag" or language == "ch":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_esp.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "ind_hi":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_hi.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "uz":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_uz.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "bn":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_bn.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "tr":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_tr.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "br":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_br.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "np":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_np.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "pk":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_pk.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+            elif language == "ru":
+                await bot.send_photo(
+                    photo=open(f"resources/send_screenshot_ru.jpg", "rb"),
+                    chat_id=call.message.chat.id
+                )
+
         if call.data == "activation":
             if await check_permission(
                 session=session,
