@@ -410,9 +410,7 @@ async def send_daily_notification():
         for user in users:
             await bot.send_message(
                 chat_id=user.telegram_id,
-                text="Are you not earning with us yet? 🤷‍♂️😳\n\n"
-                     "Hurry up and /start \n"
-                     "And in 5 minutes you will get the first magic signal that will multiply your money 💰"
+                text=LOCALE[user.localization].push[0]
             )
 
 async def on_startup():

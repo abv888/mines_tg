@@ -103,7 +103,9 @@ LOCALE = {
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
-        push="PUSH",
+        push="Are you not earning with us yet? 🤷‍♂️😳\n\n"
+                     "Hurry up and /start \n"
+                     "And in 5 minutes you will get the first magic signal that will multiply your money 💰",
     ),
     'ind_hi': Localization(
         link="https://1wdgx.com/casino/list?open=register&p=ytio",
@@ -138,7 +140,9 @@ LOCALE = {
         open_ios_text="Web App iOS Kholo",
         open_android_text="Android | Windows Kholo",
         webapp="WEB App:",
-        push="PUSH",
+        push="Kya aap abhi tak hamare sath kamai nahi kar rahe hain? 🤷‍♂️😳\n\n"
+             "Jaldi karein aur /start karein \n"
+             "Aur 5 minute mein aapko pehla jadui signal milega jo aapka paisa badha dega 💰",
     ),
     'uz': Localization(
         link="https://1wayto.life/casino/list?open=register&p=6mqq",
@@ -173,7 +177,9 @@ LOCALE = {
         open_ios_text="Web App iOS ni oching",
         open_android_text="Android | Windows ni oching",
         webapp="WEB App:",
-        push="PUSH"
+        push="Siz hali biz bilan pul ishlamayapsizmi? 🤷‍♂️😳\n\n"
+             "Shoshiling va /start bosing \n"
+             "Va 5 daqiqada sizning pulingizni ko'paytiradigan birinchi sehrli signalni olasiz 💰"
     ),
     'ag': Localization(
         link="https://1wqumw.life/casino/list?open=register&p=suc8",
@@ -208,7 +214,10 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
-        push="PUSH"
+        push="¿Aún no estás ganando con nosotros? 🤷‍♂️😳\n\n"
+             "Date prisa y /start \n"
+             "Y en 5 minutos recibirás la primera señal mágica que multiplicará tu dinero 💰"
+
     ),
     'ch': Localization(
         link="https://1wbsjy.life/casino/list?open=register&p=sdsj",
@@ -243,7 +252,9 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
-        push="PUSH"
+        push="¿Aún no estás ganando con nosotros? 🤷‍♂️😳\n\n"
+             "Date prisa y /start \n"
+             "Y en 5 minutos recibirás la primera señal mágica que multiplicará tu dinero 💰"
     ),
     'bn': Localization(
         link="https://1wltu.com/casino/list?open=register&p=vd4a",
@@ -278,7 +289,10 @@ LOCALE = {
         open_ios_text="Web App iOS kholo",
         open_android_text="Android | Windows kholo",
         webapp="WEB App:",
-        push="PUSH"
+        push="Apni ekhono amader shathe ay korchen na? 🤷‍♂️😳\n\n"
+             "Tara tari korun ebong /start din \n"
+             "Ar 5 minute apni prothom jadu signal paben, jeta apnar taka gunonukritto korbe 💰"
+
     ),
     'gh': Localization(
         link="https://1wdld.com/casino/list?open=register&p=j8vq",
@@ -313,7 +327,9 @@ LOCALE = {
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
-        push="PUSH"
+        push="Are you not earning with us yet? 🤷‍♂️😳\n\n"
+             "Hurry up and /start \n"
+             "And in 5 minutes you will get the first magic signal that will multiply your money 💰"
     ),
     'tr': Localization(
         link="https://1wbpqg.top/casino/list?open=register&p=ycwy",
@@ -348,7 +364,10 @@ LOCALE = {
         open_ios_text="Web App iOS'u Aç",
         open_android_text="Android | Windows'u Aç",
         webapp="WEB App:",
-        push="PUSH"
+        push="Henüz bizimle kazanmıyor musunuz? 🤷‍♂️😳\n\n"
+             "Hemen acele et ve /start \n"
+             "Ve 5 dakika içinde paranızı katlayacak ilk sihirli sinyali alacaksınız 💰"
+
     ),
     'br': Localization(
         link="https://1wfwna.life/casino/list?open=register&p=qfcn",
@@ -383,7 +402,10 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
-        push="PUSH"
+        push="Você ainda não está ganhando conosco? 🤷‍♂️😳\n\n"
+             "Apressa-te e /start \n"
+             "E em 5 minutos você receberá o primeiro sinal mágico que multiplicará seu dinheiro 💰"
+
     ),
     'np': Localization(
         link="https://www.youtube.com/",
@@ -418,7 +440,10 @@ LOCALE = {
         open_ios_text="Web App iOS kholu hos",
         open_android_text="Android | Windows kholu hos",
         webapp="WEB App:",
-        push="PUSH"
+        push="Tapaai hami sanga kamaaunu bhaeko chaina? 🤷‍♂️😳\n\n"
+             "Chito garnuhos ra /start garnuhos \n"
+             "Ra 5 minute ma tapai ko paisa gunanuko garnesakcha bhanne pahilo jadumayi sanket paunuhunecha 💰"
+
     ),
     'pk': Localization(
         link="https://1whfbb.life/casino/list?open=register&p=hmrg",
@@ -453,7 +478,10 @@ LOCALE = {
         open_ios_text="Web App iOS ko kholain",
         open_android_text="Android | Windows ko kholain",
         webapp="WEB App:",
-        push="PUSH"
+        push="Kya aap abhi tak hamaray sath kamaai nahi kar rahay? 🤷‍♂️😳\n\n"
+             "Jaldi karein aur /start dabayein \n"
+             "Aur 5 minutes mein aapko pehla jadugari signal milega jo aapke paisay ko barha dega 💰"
+
     ),
     'ru': Localization(
         link="https://1warlo.top/casino/list?open=register&p=n6pk",
@@ -488,7 +516,10 @@ LOCALE = {
         open_ios_text="Открыть Web App для iOS",
         open_android_text="Открыть Android | Windows",
         webapp="ВЕБ-приложение:",
-        push="PUSH"
+        push="Вы еще не зарабатываете с нами? 🤷‍♂️😳\n\n"
+             "Поторопитесь и нажмите /start \n"
+             "И через 5 минут вы получите первый волшебный сигнал, который умножит ваши деньги 💰"
+
     ),
     'esp': Localization(
         link="https://www.youtube.com/",
@@ -523,7 +554,10 @@ LOCALE = {
         open_ios_text="Abrir Web App iOS",
         open_android_text="Abrir Android | Windows",
         webapp="WEB App:",
-        push="PUSH"
+        push="¿Aún no estás ganando con nosotros? 🤷‍♂️😳\n\n"
+             "Date prisa y /start \n"
+             "Y en 5 minutos recibirás la primera señal mágica que multiplicará tu dinero 💰"
+
     ),
     'en': Localization(
         link="https://www.youtube.com/",
@@ -558,7 +592,9 @@ LOCALE = {
         open_ios_text="Open Web App iOS",
         open_android_text="Open Android | Windows",
         webapp="WEB App:",
-        push="PUSH"
+        push="Are you not earning with us yet? 🤷‍♂️😳\n\n"
+                     "Hurry up and /start \n"
+                     "And in 5 minutes you will get the first magic signal that will multiply your money 💰"
     )
 
 }
