@@ -257,7 +257,7 @@ async def callback_inline(call):
             )
             register_button = types.InlineKeyboardButton(
                 text="REGISTER HERE ⛓️",
-                url=LOCALE[language].link
+                url=REFERRAL_LINK
             )
             get_signal_button = types.InlineKeyboardButton(
                 text="GET SIGNAL",
