@@ -157,7 +157,7 @@ async def callback_inline(call):
             await bot.send_video(
                 video=open(f"resources/guide.MP4", "rb"),
                 chat_id=call.message.chat.id,
-                caption=f"||For the bot to work correctly, the minimum bet is $6||",
+                caption=f"||For the bot to work correctly, the minimum bet is $5||",
                 reply_markup=keyboard,
                 parse_mode="MarkdownV2"
             )
