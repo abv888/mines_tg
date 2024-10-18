@@ -457,7 +457,7 @@ async def send_daily_notification():
         for user in users:
             await bot.send_message(
                 chat_id=user.telegram_id,
-                text=LOCALE[user.localization].push[0]
+                text=LOCALE[user.localization].push
             )
 
 async def on_startup():
